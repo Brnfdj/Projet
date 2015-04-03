@@ -1,25 +1,22 @@
 package fr.iutvalence.fdjbrn.motus;
 
+/* TODO JAVADOC. */
 public class Grille {
-	/**
-	 * Definition constante nombre de colonnes et lignes et definition du
-	 * tableau ‡ double entree de type Lettre.
-	 */
-	private final static int NB_COLONNE_DEFAUT = 6;
-	private final static int NB_LIGNE_DEFAUT = 8;
-	Lettre grille[][];
+    /* TODO JAVADOC. */
+    private static final int NB_COLONNE_DEFAUT = 6;
+    /* TODO JAVADOC. */
+    private static final int NB_LIGNE_DEFAUT   = 8;
+    /* TODO Visibilit√© ? Final ? */
+    /* TODO JAVADOC. */ Lettre grille[][];
 
-	/**
-	 * Constructeur de grille[][].
-	 */
-	public Grille() {
-		super();
-		grille = new Lettre[NB_LIGNE_DEFAUT][NB_COLONNE_DEFAUT];
-	}
+    /** Constructeur d'une grille vide. */
+    public Grille() {
+        grille = new Lettre[NB_LIGNE_DEFAUT][NB_COLONNE_DEFAUT];
+    }
 
-	public String toString() {
-
-		return null;
-	}
-
+    /* TODO Cela viole la convention de toString !!! */
+    @Override
+    public String toString() {
+        return null;
+    }
 }

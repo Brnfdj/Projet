@@ -1,29 +1,33 @@
 package fr.iutvalence.fdjbrn.motus;
 
+/* TODO JAVADOC. */
 public class Lettre {
-	/**
-	 * Definition des attributs de la classe : caractere et etat.
-	 */
-	private char caractere;
-	private Etat etat;
-	
-	/**
-	 * Getter de caractere.
-	 * @return caractere
-	 */
-	public char getCaractere() {
-		return this.caractere;
-	}
-	
-	/**
-	 * Getter de etat.
-	 * @return etat 
-	 */
-	public Etat getEtat(){
-		return this.etat;
-	}
-	
-	public String toString() {
-		return "|" + this.caractere + "," + this.etat + "|";
-	}
+    /* TODO JAVADOC. */
+    private char caractere;
+    /* TODO JAVADOC. */
+    private Etat etat;
+
+    /* TODO EVITER LE FRANGLAIS !!! */
+    /**
+     * Getter de caractere.
+     *
+     * @return caractere
+     */
+    public char getCaractere() {
+        return this.caractere;
+    }
+
+    /**
+     * Getter de etat.
+     *
+     * @return etat
+     */
+    public Etat getEtat() {
+        return this.etat;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("|%s,%s|", this.caractere, this.etat);
+    }
 }

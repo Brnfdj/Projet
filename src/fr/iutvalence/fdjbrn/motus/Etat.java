@@ -1,23 +1,28 @@
 package fr.iutvalence.fdjbrn.motus;
+
+/* TODO JAVADOC. */
 public enum Etat {
-	/**
-	 * Enumeration des etats possibles : ROUGE JAUNE BLANC et variable couleur.
-	 */
-	ROUGE("Caractère bien placé"), JAUNE("Caractère mal placé"), BLANC(
-			"Caractère absent");
+    /* TODO JAVADOC. */
+    ROUGE("CaractÃ¨re bien placÃ©"),
+    /* TODO JAVADOC. */
+    JAUNE("CaractÃ¨re mal placÃ©"),
+    /* TODO JAVADOC. */
+    BLANC("CaractÃ¨re absent");
+    /* TODO JAVADOC. */
+    /* TODO final ?. */
+    private String couleur;
 
-	private String couleur = "";
+    /**
+     * Constructeur de Etat.
+     *
+     * @param couleur couleur caracterisant l'Ã©tat
+     */
+    private Etat(String couleur) {
+        this.couleur = couleur;
+    }
 
-	/**
-	 * Constructeur de Etat.
-	 * @param couleur couleur caracterisant l'état
-	 */
-	private Etat(String couleur) {
-		this.couleur = couleur;
-	}
-
-	@Override
-	public String toString() {
-		return couleur;
-	}
+    @Override
+    public String toString() {
+        return couleur;
+    }
 }
