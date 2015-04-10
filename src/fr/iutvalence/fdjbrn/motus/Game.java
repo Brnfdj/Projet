@@ -1,6 +1,6 @@
 package fr.iutvalence.fdjbrn.motus;
 
 /* TODO JAVADOC. */
-public class Partie {
+public class Game {
     /* TODO. */
 }
