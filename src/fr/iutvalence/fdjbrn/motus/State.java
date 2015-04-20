@@ -9,7 +9,6 @@ public enum State {
     /* TODO JAVADOC. */
     WHITE("character not");
     /* TODO JAVADOC. */
-
     private final String color;
 
     /**
@@ -17,7 +16,7 @@ public enum State {
      *
      * @param color state's color
      */
-    private State(String color) {
+    State(String color) {
         this.color = color;
     }
 

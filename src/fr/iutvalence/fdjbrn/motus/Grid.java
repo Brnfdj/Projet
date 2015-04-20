@@ -9,25 +9,25 @@ public class Grid {
 	/* TODO JAVADOC. */
 	private final Letter grid[][];
 
+	/* TODO Translate. */
 	/** Constructeur d'une grille vide. */
 	public Grid() {
 		grid = new Letter[NB_LINE_DEFAULT][NB_COLUMN_DEFAULT];
 	}
 
+	/* TODO JAVADOC. */
 	public void addCharacterToGrid(Letter letter, int line, int column) {
 		grid[line][column] = letter;
 
 	}
 
+	/* TODO Implement with StringBuilder. */
 	@Override
 	public String toString() {
 		String a = "";
 		for (int line = 0; line < NB_LINE_DEFAULT; line++) {
 			for (int column = 0; column < NB_COLUMN_DEFAULT; column++) {
-				if (grid[line][column] == null) {
-					a += "_";
-				} else
-					a += grid[line][column];
+				a += (grid[line][column] == null) ? "_" : grid[line][column].toString();
 			}
 			a += "\n";
 		}

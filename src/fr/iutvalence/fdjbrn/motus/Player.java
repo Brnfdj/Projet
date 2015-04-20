@@ -5,12 +5,12 @@ public class Player {
     /* TODO JAVADOC. */
     private final String name;
     /* TODO JAVADOC. */
-    private int score;
+    private       int    score;
 
     /**
-     * Player's creation with his name
+     * Player's creation with his name.
      *
-     * @param name name's player 
+     * @param name name's player
      */
     public Player(String name) {
         this.name = name;
@@ -18,7 +18,7 @@ public class Player {
     }
 
     /**
-     * Method which allow getting player's name
+     * Method which allow getting player's name.
      *
      * @return player's name
      */
@@ -27,7 +27,7 @@ public class Player {
     }
 
     /**
-     * Method which allow getting player's score
+     * Method which allow getting player's score.
      *
      * @return player's score
      */

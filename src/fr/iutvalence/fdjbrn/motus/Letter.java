@@ -3,24 +3,16 @@ package fr.iutvalence.fdjbrn.motus;
 /* TODO JAVADOC. */
 public class Letter {
     /* TODO JAVADOC. */
-    private char character;
+    private char  character;
     /* TODO JAVADOC. */
     private State state;
 
-    /**
-     * character's getter.
-     *
-     * @return character
-     */
+    /** Character's getter. */
     public char getCharacter() {
         return this.character;
     }
 
-    /**
-     * state's getter
-     *
-     * @return state
-     */
+    /** State's getter. */
     public State getState() {
         return this.state;
     }
