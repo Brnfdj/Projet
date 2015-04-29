@@ -8,7 +8,7 @@ public class Player {
     private       int    score;
 
     /**
-     * Player's creation with his name.
+     * player's creation with his name.
      *
      * @param name name's player
      */
@@ -17,11 +17,7 @@ public class Player {
         this.score = 0;
     }
 
-    /**
-     * Method which allow getting player's name.
-     *
-     * @return player's name
-     */
+    /** Method which allow getting player's name. */
     public String getName() {
         return this.name;
     }
