@@ -8,7 +8,7 @@ public enum State {
     YELLOW("incorrectly positioned character"),
     /* TODO JAVADOC. */
     WHITE("character not"),
-    
+    /* TODO JAVADOC. */
     NORMAL("secret character");
     /* TODO JAVADOC. */
     private final String color;
