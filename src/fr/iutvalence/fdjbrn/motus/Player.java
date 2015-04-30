@@ -22,11 +22,7 @@ public class Player {
         return this.name;
     }
 
-    /**
-     * Method which allow getting player's score.
-     *
-     * @return player's score
-     */
+    /** Method which allow getting player's score. */
     public int getScore() {
         return this.score;
     }
