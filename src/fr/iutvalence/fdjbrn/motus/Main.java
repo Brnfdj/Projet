@@ -1,11 +1,15 @@
 package fr.iutvalence.fdjbrn.motus;
 
-/* TODO JAVADOC. */
+/**
+ * Main class
+ * 
+ * @author breynaty
+ *
+ */
 public class Main {
-    /* TODO JAVADOC. */
-    public static void main(String[] args) {
-        Player Yohann = new Player("Yohann");
-        Game game = new Game(Yohann, "TRUC");
-        game.start();
-    }
+	/* TODO JAVADOC. */
+	public static void main(String[] args) {
+		Game game = new Game("Yohann", "SECRET");
+		game.start();
+	}
 }

@@ -1,13 +1,24 @@
 package fr.iutvalence.fdjbrn.motus;
 
-/* TODO JAVADOC. */
+/**
+ * Letter class
+ * @author breynaty
+ *
+ */
 public class Letter {
-    /* TODO JAVADOC. */
+    /**
+     * A letter is defined with a character
+     */
     private char  character;
-    /* TODO JAVADOC. */
+    /**
+     * A letter is defined with a state
+     */
     private State state;
 
-    /* TODO JAVADOC. */
+    /**
+     * Letter's constructor
+     * @param character
+     */
     public Letter(char character) {
         this.character = character;
         this.state = State.NORMAL;
@@ -23,6 +34,11 @@ public class Letter {
         return this.state;
     }
 
+    /* TODO */
+    public void setState(State state) {
+    	this.state = state;
+    }
+    
     @Override
     public String toString() {
         return String.format("%s,%s", this.character, this.state);

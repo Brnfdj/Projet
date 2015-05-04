@@ -1,16 +1,34 @@
 package fr.iutvalence.fdjbrn.motus;
 
-/* TODO JAVADOC. */
+/**
+ * State class
+ * @author breynaty
+ *
+ */
 public enum State {
-    /* TODO JAVADOC. */
-    RED("well positioned character"),
-    /* TODO JAVADOC. */
-    YELLOW("incorrectly positioned character"),
-    /* TODO JAVADOC. */
-    WHITE("character not"),
-    /* TODO JAVADOC. */
-    NORMAL("secret character");
-    /* TODO JAVADOC. */
+    /**
+     * well positioned character
+     */
+    RED("RED"),
+    
+    /**
+     * incorrectly positioned character
+     */
+    YELLOW("YEL"),
+    
+    /**
+     * character not
+     */
+    WHITE("WHI"),
+    
+    /**
+     * default state
+     */
+    NORMAL("SEC");
+    
+    /**
+     * color is a state's attribute
+     */
     private final String color;
 
     /**
