@@ -1,5 +1,7 @@
 package fr.iutvalence.fdjbrn.motus;
 
+import java.util.Scanner;
+
 /**
  * Game class
  * 
@@ -10,6 +12,8 @@ public class Game {
 	Player player;
 	Letter[] secret;
 	Grid grid;
+	private boolean lose = true;
+	private String loseText = "You lose, the secret word was";
 
 	/**
 	 * Game's constructor
@@ -21,52 +25,55 @@ public class Game {
 		player = new Player(playername);
 		this.secret = stringToLetterArray(secret);
 		grid = new Grid();
+		String loseWord = secret;
 	}
 
 	public void start() {
+
 		int line = 0;
-		while (true) {
+
+		Scanner sc = new Scanner(System.in);
+
+		while (lose && line < 6) {
 			System.out.println(grid);
-			// TODO Demander réponse
-			String guess = "TECRAK";
+			System.out.println("Veuillez saisir un mot de 6 lettres :");
+			String str = sc.nextLine();
+			String guess = str;
 			Letter[] answer = checkSecret(guess);
 			grid.addLine(answer, line);
 			line++;
 		}
+
+		System.out.println(loseText);
 	}
+
 	/**
-	 * Method contains rules of motus, and give a color to a letter which depends of the location of it
+	 * Method contains rules of motus, and give a color to a letter which
+	 * depends of the location of it
+	 * 
 	 * @param guess
 	 * @return
 	 */
 	private Letter[] checkSecret(String guess) {
-		Letter[] guessguess = stringToLetterArray(guess);
-		for (int counter = 0; counter < guessguess.length; counter++) {
-			if (guessguess[counter].getCharacter() == this.secret[counter]
-					.getCharacter()) {
-				guessguess[counter].setState(State.RED);
-			}
-			if (guessguess[counter].getCharacter() != this.secret[counter]
-					.getCharacter()) {
-				for (int seccounter = 0; seccounter < guessguess.length; seccounter++) {
-					for (int thicounter = 0; thicounter < guessguess.length; thicounter++) {
-
-						if (guessguess[seccounter].getCharacter() == this.secret[thicounter]
-								.getCharacter()) {
-							guessguess[counter].setState(State.YELLOW);
-
-						}
-
-						else {
-							guessguess[counter].setState(State.WHITE);
-
-						}
+		Letter[] tabGuess = stringToLetterArray(guess);
+		for (int i = 0; i < tabGuess.length; i++) {
+			if (tabGuess[i].getCharacter() == secret[i].getCharacter()) {
+				tabGuess[i].setState(State.RED);
+			} else {
+				for (int j = 0; j < tabGuess.length; j++) {
+					if (tabGuess[i].getCharacter() == secret[j].getCharacter()) {
+						tabGuess[i].setState(State.YELLOW);
 					}
 				}
-			}
 
+				if (tabGuess[i].getState() != State.YELLOW) {
+					tabGuess[i].setState(State.WHITE);
+				}
+
+			}
 		}
-		return guessguess;
+
+		return tabGuess;
 	}
 
 	/**

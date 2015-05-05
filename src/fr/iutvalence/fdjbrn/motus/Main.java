@@ -1,5 +1,6 @@
 package fr.iutvalence.fdjbrn.motus;
 
+
 /**
  * Main class
  * 
@@ -13,3 +14,5 @@ public class Main {
 		game.start();
 	}
 }
+
+
