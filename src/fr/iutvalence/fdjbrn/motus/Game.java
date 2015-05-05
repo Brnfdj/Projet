@@ -34,7 +34,11 @@ public class Game {
 			line++;
 		}
 	}
-
+	/**
+	 * Method contains rules of motus, and give a color to a letter which depends of the location of it
+	 * @param guess
+	 * @return
+	 */
 	private Letter[] checkSecret(String guess) {
 		Letter[] guessguess = stringToLetterArray(guess);
 		for (int counter = 0; counter < guessguess.length; counter++) {

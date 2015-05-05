@@ -41,6 +41,6 @@ public class Letter {
     
     @Override
     public String toString() {
-        return String.format("%s,%s", this.character, this.state);
+        return String.format("%s    |   %s", this.character, this.state);
     }
 }
