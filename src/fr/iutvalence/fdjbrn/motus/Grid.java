@@ -22,9 +22,7 @@ public class Grid {
     // TODO BETTER JAVADOC
     /** Method allow to add a line on the grid. */
     public void addLine(Letter[] letter, int line) {
-        for (int counter = 0; counter < NB_COLUMN_DEFAULT; counter++) {
-            grid[line][counter] = letter[counter];
-        }
+        System.arraycopy(letter, 0, grid[line], 0, NB_COLUMN_DEFAULT);
     }
 
     @Override
