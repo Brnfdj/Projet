@@ -9,42 +9,52 @@ import java.util.Scanner;
  *
  */
 public class Game {
-	Player player;
+	private final Player player;
 	Letter[] secret;
 	Grid grid;
-	private boolean lose = true;
-	private String loseText = "You lose, the secret word was";
+	private String loseWord;
 
 	/**
 	 * Game's constructor
 	 * 
 	 * @param namep
-	 * @param secret
+	 * @param sec
 	 */
-	public Game(String playername, String secret) {
+	public Game(String playername, String sec) {
 		player = new Player(playername);
-		this.secret = stringToLetterArray(secret);
+		secret = stringToLetterArray(sec);
 		grid = new Grid();
-		String loseWord = secret;
+		loseWord = sec;
 	}
 
 	public void start() {
+		Scanner sc = new Scanner(System.in);
 
 		int line = 0;
-
-		Scanner sc = new Scanner(System.in);
+		boolean lose = true;
 
 		while (lose && line < 6) {
 			System.out.println(grid);
 			System.out.println("Veuillez saisir un mot de 6 lettres :");
-			String str = sc.nextLine();
-			String guess = str;
+			String guess = sc.nextLine();
+			if (guess.length() != 6) {
+				System.out.println("Erreur, le mot doit contenir 6 lettres");
+				line++;
+				continue;
+			}
 			Letter[] answer = checkSecret(guess);
-			grid.addLine(answer, line);
-			line++;
+
+			grid.addLine(answer, line++);
+			lose = !guess.equals(loseWord);
+		}
+		if (lose) {
+			System.out.printf("You lose, the secret word was \"%s\"%n",
+					loseWord);
+		} else {
+			System.out.println("Congratulations, you WON !");
 		}
 
-		System.out.println(loseText);
+		sc.close();
 	}
 
 	/**
@@ -57,19 +67,23 @@ public class Game {
 	private Letter[] checkSecret(String guess) {
 		Letter[] tabGuess = stringToLetterArray(guess);
 		for (int i = 0; i < tabGuess.length; i++) {
-			if (tabGuess[i].getCharacter() == secret[i].getCharacter()) {
-				tabGuess[i].setState(State.RED);
-			} else {
-				for (int j = 0; j < tabGuess.length; j++) {
-					if (tabGuess[i].getCharacter() == secret[j].getCharacter()) {
-						tabGuess[i].setState(State.YELLOW);
-					}
-				}
+			Letter letter = tabGuess[i];
+			char current = letter.getCharacter();
 
-				if (tabGuess[i].getState() != State.YELLOW) {
-					tabGuess[i].setState(State.WHITE);
-				}
+			if (current == secret[i].getCharacter()) {
+				letter.setState(State.RED);
+				continue;
+			}
 
+			for (int j = 0; j < tabGuess.length; j++) {
+				if (current == secret[j].getCharacter()) {
+					letter.setState(State.YELLOW);
+					break;
+				}
+			}
+
+			if (letter.getState() != State.YELLOW) {
+				letter.setState(State.WHITE);
 			}
 		}
 
@@ -83,7 +97,7 @@ public class Game {
 	 * @param stringChange
 	 * @return
 	 */
-	private Letter[] stringToLetterArray(final String stringChange) {
+	private static Letter[] stringToLetterArray(final String stringChange) {
 		final Letter[] letters = new Letter[stringChange.length()];
 		for (int counter = 0; counter < stringChange.length(); counter++) {
 			letters[counter] = new Letter(stringChange.charAt(counter));
