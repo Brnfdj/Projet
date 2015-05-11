@@ -33,8 +33,10 @@ public class Player {
     public int getScore() {
         return this.score;
     }
-
-    // TODO There is not setScore ???
+    
+    public void setScore(int surcharge){
+    	this.score = this.score - surcharge;
+    }
 
     @Override
     public String toString() {
