@@ -2,6 +2,7 @@ package fr.iutvalence.fdjbrn.motus;
 
 /**
  * Letter class.
+ * A letter is defined with a character and a state
  *
  * @author breynaty
  * @version TODO
@@ -17,6 +18,7 @@ public class Letter {
         this.character = character;
         this.state = State.NORMAL;
     }
+    
 
     /** Character's getter. */
     public char getCharacter() {

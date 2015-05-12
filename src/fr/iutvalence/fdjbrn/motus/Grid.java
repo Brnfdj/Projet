@@ -1,7 +1,8 @@
 package fr.iutvalence.fdjbrn.motus;
 
 /**
- * Grid class. TODO Better JAVADOC.
+ * Grid class. 
+ * A grid is a double tab with a number of coulumn and line.
  *
  * @author breynaty
  * @version TODO
@@ -19,8 +20,7 @@ public class Grid {
         grid = new Letter[NB_LINE_DEFAULT][NB_COLUMN_DEFAULT];
     }
 
-    // TODO BETTER JAVADOC
-    /** Method allow to add a line on the grid. */
+    /** Method allow to add a line on the grid on each turn */
     public void addLine(Letter[] letter, int line) {
         System.arraycopy(letter, 0, grid[line], 0, NB_COLUMN_DEFAULT);
     }
