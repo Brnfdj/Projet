@@ -26,6 +26,10 @@ public class Game {
 	 * lose.
 	 */
 	private final String loseWord;
+	/**
+	 * Attribute whichi allow to set a score.
+	 */
+	private static final int SCORE_MULTIPLICATOR = 21;
 
 	/** Game's constructor. */
 	public Game(String playername, String sec) {
@@ -78,7 +82,7 @@ public class Game {
 			final int coeff = line;
 			System.out.println("Congratulations, you WON!");
 			if (coeff != 1) {
-				this.player.setScore(coeff * 21);
+				this.player.setScore(coeff * SCORE_MULTIPLICATOR);
 			}
 			System.out.println("Your score : " + this.player.getScore());
 		}
@@ -118,7 +122,7 @@ public class Game {
 
 				if (letter.getState() != State.YELLOW) {
 					letter.setState(State.WHITE);
-				}
+					}
 			}
 
 			return tabGuess;

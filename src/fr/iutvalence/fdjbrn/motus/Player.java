@@ -34,6 +34,10 @@ public class Player {
         return this.score;
     }
     
+    /**
+     * Method allows seting the player's score by decreasing.
+     * @param surcharge
+     */
     public void setScore(int surcharge){
     	this.score = this.score - surcharge;
     }

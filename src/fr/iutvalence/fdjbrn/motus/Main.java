@@ -9,7 +9,10 @@ import java.util.Scanner;
  * @version TODO
  */
 public class Main {
-    /* TODO JAVADOC. */
+    /**
+     * Main method.
+     * @param args
+     */
     public static void main(String[] args) {
     	Scanner sc = new Scanner(System.in);
     	System.out.println("Choose a nickname");
