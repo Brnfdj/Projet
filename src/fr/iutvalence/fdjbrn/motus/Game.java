@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Game class.
  *
  * @author breynaty
- * @version TODO
+ * @version 18052015
  */
 public class Game {
 	/**
@@ -16,7 +16,7 @@ public class Game {
 	/**
 	 * Game's attribute tab which contain the secret word.
 	 */
-	private final Letter[] secret;
+	private Letter[] secret;
 	/**
 	 * Game's attribute game's grid.
 	 */
@@ -27,14 +27,19 @@ public class Game {
 	 */
 	private final String loseWord;
 	/**
-	 * Attribute whichi allow to set a score.
+	 * Attribute which allow to set a score.
 	 */
 	private static final int SCORE_MULTIPLICATOR = 21;
 
 	/** Game's constructor. */
-	public Game(String playername, String sec) {
+	public Game(String playername, String sec) throws WrongSizeWordException {
 		player = new Player(playername);
-		secret = stringToLetterArray(sec);
+		secret = null;
+		try {
+			secret = stringToLetterArray(sec);
+		} catch (WrongSizeWordException exc) {
+			System.out.println("The secret word has to contain 6 letters");
+		}
 		grid = new Grid();
 		loseWord = sec;
 	}
@@ -42,15 +47,27 @@ public class Game {
 	/**
 	 * Method which allow to change a character type in a Letter type define in
 	 * the program
+	 * 
+	 * @throws WrongSizeWordException
 	 */
-	private static Letter[] stringToLetterArray(final String stringChange) {
-		final Letter[] letters = new Letter[stringChange.length()];
-		for (int counter = 0; counter < stringChange.length(); counter++) {
-			letters[counter] = new Letter(stringChange.charAt(counter));
+	private static Letter[] stringToLetterArray(final String stringChange)
+			throws WrongSizeWordException {
+		if (stringChange.length() != 6) {
+			throw new WrongSizeWordException();
+		} else {
+			final Letter[] letters = new Letter[stringChange.length()];
+			for (int counter = 0; counter < stringChange.length(); counter++) {
+				letters[counter] = new Letter(stringChange.charAt(counter));
+			}
+			return letters;
 		}
-		return letters;
 	}
 
+	/**
+	 * Method with the game's functionning.
+	 * 
+	 * @throws WrongSizeWordException
+	 */
 	public void start() throws WrongSizeWordException {
 		Scanner sc = new Scanner(System.in);
 
@@ -122,7 +139,7 @@ public class Game {
 
 				if (letter.getState() != State.YELLOW) {
 					letter.setState(State.WHITE);
-					}
+				}
 			}
 
 			return tabGuess;

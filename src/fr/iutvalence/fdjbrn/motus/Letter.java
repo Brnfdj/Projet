@@ -5,7 +5,7 @@ package fr.iutvalence.fdjbrn.motus;
  * A letter is defined with a character and a state
  *
  * @author breynaty
- * @version TODO
+ * @version 18052015
  */
 public class Letter {
     /** A letter is defined with a character. */
@@ -30,7 +30,10 @@ public class Letter {
         return this.state;
     }
 
-    /* TODO */
+    /**
+     * State's setter.
+     * @param state
+     */
     public void setState(State state) {
         this.state = state;
     }

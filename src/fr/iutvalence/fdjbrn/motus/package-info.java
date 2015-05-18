@@ -1,4 +1,4 @@
 /**
- * TODO JAVADOC.
+ * Package motus.
  */
 package fr.iutvalence.fdjbrn.motus;

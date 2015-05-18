@@ -4,7 +4,7 @@ package fr.iutvalence.fdjbrn.motus;
  * Player class. TODO BETTER JAVADOC
  *
  * @author breynaty
- * @version TODO
+ * @version 18052015
  */
 public class Player {
     /** Constant for score's beginning. */

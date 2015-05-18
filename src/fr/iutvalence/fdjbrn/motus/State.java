@@ -1,10 +1,10 @@
 package fr.iutvalence.fdjbrn.motus;
 
 /**
- * State class. TODO BETTER JAVADOC
+ * Letter's State class which determinate if a letter is in a word or not.
  *
  * @author breynaty
- * @version TODO
+ * @version 18052015
  */
 public enum State {
     /** Well positioned character. */

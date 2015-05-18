@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Main class. TODO Better JAVADOC.
  *
  * @author breynaty
- * @version TODO
+ * @version 18052015
  */
 public class Main {
     /**
@@ -20,9 +20,10 @@ public class Main {
     	System.out.println("Please, chose a 6 letters secret");
     	String secret = sc.nextLine();
     	
-        Game game = new Game(nickname,secret);
+        
         
         try {
+        	Game game = new Game(nickname,secret);
 			game.start();
 		} catch (WrongSizeWordException exception) {
 		}
